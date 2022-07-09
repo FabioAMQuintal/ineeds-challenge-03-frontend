@@ -3,7 +3,6 @@ import { Home } from './components/index'
 import Expenses from './components/teste';
 import { Route, Routes } from 'react-router-dom';
 import {RequireAuth} from './components/auth/RequireAuth';
-import { Auth } from './services/index'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {

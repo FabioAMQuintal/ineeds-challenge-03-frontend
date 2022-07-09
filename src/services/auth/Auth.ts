@@ -12,7 +12,6 @@ class Auth {
 
             if(response.data.JWTtoken){
                 localStorage.setItem("user", JSON.stringify(response.data));
-                //console.log(response.data)
                 return Promise.resolve(response.data);
             } else {
                 return Promise.reject(response.data.error)
