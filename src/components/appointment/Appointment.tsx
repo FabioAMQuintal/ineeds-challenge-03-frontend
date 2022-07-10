@@ -1,35 +1,24 @@
-import React, { useState } from "react";
-import { Form, Button, Spinner } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import { Auth } from '../../services/index';
+import { Outlet } from "react-router-dom";
+import { Form, Button, Spinner} from 'react-bootstrap';
+
+const Appointment = () => {
+
+    
 
 
-const Login = () => {
+    return(
+        <>
+        <h1>consultas</h1>
+        <Outlet />
+        </>
+    )
 
-    const navigate = useNavigate()
+}
 
-    const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
+export default Appointment;
 
-    const [loading, setLoading] = useState<boolean>(false);
-
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        try {
-            setLoading(true)
-            const user = await Auth.login(email, senha)
-            if (user) {
-                setLoading(false)
-                navigate('/main')
-            }
-        } catch (e: any) {
-            setLoading(false)
-            alert(`Dados inválidos.\nErro: ${e.name}`)
-        }
-    }
-
-    return (
-        <Form onSubmit={handleSubmit}>
+/*
+<Form >
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -54,7 +43,6 @@ const Login = () => {
                 />
             }
         </Form>
-    )
-}
+        <Outlet />
 
-export default Login;
+*/

@@ -5,7 +5,7 @@ class Auth {
 
     async login(email: string, password: string){
         try{
-            const response = await axios.post(config.api.baseUrl.concat(config.api.employer, 'login'),{
+            const response = await axios.post(config.api.baseUrlLocal.concat(config.api.employer, 'login'),{
                 email,
                 password
             });

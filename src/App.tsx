@@ -1,20 +1,22 @@
 import React from 'react';
-import { Home } from './components/index'
-import Expenses from './components/teste';
+import { Home, RequireAuth, Main, Appointment, Patient, Search } from './components/index'
 import { Route, Routes } from 'react-router-dom';
-import {RequireAuth} from './components/auth/RequireAuth';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/teste' element={
+      <Route path='/main' element={
         <RequireAuth>
-          <Expenses />
+          <Main />
         </RequireAuth>
-      }
-      />
+      }>
+        <Route path="consultas" element={<Appointment />} />
+        <Route path="pacientes" element={<Patient />} />
+        <Route path="buscar" element={<Search />} />
+
+      </Route>
     </Routes>
 
   );

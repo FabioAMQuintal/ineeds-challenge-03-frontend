@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 export default {
     api: {
         baseUrl: 'https://ineeds-challenge-03-backend.herokuapp.com/api/',
-        employer: 'employer/'
+        baseUrlLocal: 'http://localhost:3000/api/',
+        employer: 'employer/',
+        patient: 'patient/'
     }
 };
